@@ -3,16 +3,28 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import FormularioColor from "./components/FormularioColor";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import CardColor from "./components/CardColor";
+import { useState } from "react";
 
 function App() {
+
+  const [colores, setColores] = useState([]);
+
+  const agregarColor = (nuevoColor) => {
+    const nuevo = {id: Date.now(), nombre: nuevoColor}
+    setColores([...colores, nuevo])
+  }
+
   return (
     <main className="container my-5">
       <section className="container bg-secondary rounded-4">
-        <FormularioColor />
+        <FormularioColor agregarColor={agregarColor} />
       </section>
         <div className="container-fluid my-3 row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
-        <CardColor />
-        <CardColor />
+          {colores.map((color)=> 
+          <CardColor
+            key={color.id} 
+            color={color} 
+          />)}
       </div>
     </main>
   );
