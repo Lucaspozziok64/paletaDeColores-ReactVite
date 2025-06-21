@@ -14,6 +14,10 @@ function App() {
     setColores([...colores, nuevo])
   }
 
+  const borrarCard = (id) => {
+    setColores(colores.filter(color => color.id !== id));
+  }
+
   return (
     <main className="container my-5">
       <section className="container bg-secondary rounded-4">
@@ -24,6 +28,7 @@ function App() {
           <CardColor
             key={color.id} 
             color={color} 
+            borrarCard={()=> borrarCard(color.id)}
           />)}
       </div>
     </main>
