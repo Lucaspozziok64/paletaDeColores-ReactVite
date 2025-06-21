@@ -9,7 +9,7 @@ const FormularioColor = ({ agregarColor }) => {
     if (!colorInput.trim()) {
       Swal.fire({
         title: "Debes elegir un color, haciendo click en el recuadro del input",
-        text: "Asi no funciona!",
+        text: "Asi no funciona!😉",
         icon: "warning",
       });
       return;
