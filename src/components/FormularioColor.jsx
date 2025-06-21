@@ -6,6 +6,9 @@ const FormularioColor = ({ agregarColor }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    if(!colorInput.trim()) {
+      return;
+    }
     agregarColor(colorInput)
     setColorInput('')
   }
