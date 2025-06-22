@@ -4,6 +4,7 @@ import FormularioColor from "./components/FormularioColor";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import CardColor from "./components/CardColor";
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 function App() {
   const [colores, setColores] = useState([]);
@@ -15,6 +16,11 @@ function App() {
 
   const borrarCard = (id) => {
     setColores(colores.filter((color) => color.id !== id));
+    Swal.fire({
+      title: "Color Borrado!",
+      text: "Has elminado la tarjeta!",
+      icon: "success",
+    });
   };
 
   return (
@@ -34,7 +40,10 @@ function App() {
         </div>
       </main>
       <footer className="bg-dark text-center text-white p-1">
-        <p className="mb-0">Desarrollado por <a href="">Lucas Figueroa</a>👨‍💻</p>
+        <p className="mb-0">
+          Desarrollado por{" "}
+          <a href="https://github.com/Lucaspozziok64">Lucas Figueroa</a>👨‍💻
+        </p>
         <p className="mb-0">&copy;Todos los derechos reservados</p>
       </footer>
     </>
