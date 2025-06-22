@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <main className="container my-5">
-        <section className="container bg-secondary rounded-4">
+        <section className="container bg-secondary rounded-4 contenedorForm">
           <FormularioColor agregarColor={agregarColor} />
         </section>
         <div className="container-fluid my-3 row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
