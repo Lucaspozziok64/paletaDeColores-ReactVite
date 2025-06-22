@@ -35,7 +35,7 @@ const FormularioColor = ({ agregarColor }) => {
             onChange={(e) => setColorInput(e.target.value)}
             value={colorInput}
           />
-          <button type="submit" className="btn btn-success">
+          <button type="submit" className="btn btn-success botonAgregar">
             <i className="bi bi-plus-circle mx-1 text-white"></i>Agregar
           </button>
         </div>
