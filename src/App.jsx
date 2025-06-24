@@ -3,11 +3,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import FormularioColor from "./components/FormularioColor";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import CardColor from "./components/CardColor";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 
 function App() {
-  const [colores, setColores] = useState([]);
+  const coloresGuardados = JSON.parse(localStorage.getItem('agendaColores')) || []
+  const [colores, setColores] = useState(coloresGuardados);
+
+  useEffect(()=> {
+    localStorage.setItem('agendaColores', JSON.stringify(colores))
+  }, [colores])
 
   const agregarColor = (nuevoColor) => {
     const nuevo = { id: Date.now(), nombre: nuevoColor };
